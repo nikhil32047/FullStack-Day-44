@@ -1,0 +1,70 @@
+Day 44:
+==========
+
+a) Working with csv Module
+====================================
+The csv module is used to read from and write to CSV (Comma Separated Values) files.
+CSV files are widely used for data exchange between applications like Excel and databases.
+
+Before using, import the module:
+
+import csv
+
+
+CSV files are usually opened with:
+
+r → read
+
+w → write
+
+newline='' (recommended)
+
+Example:
+
+import csv
+
+with open("data.csv", "w", newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(["Name", "Age"])
+
+
+Key Points:
+
+Lightweight and fast
+
+No external libraries required
+
+Handles tabular data easily
+
+
+b) Submodules / Functions of CSV:
+=======================================
+writer()
+
+Creates a writer object to write data into a CSV file.
+
+writer = csv.writer(f)
+
+writerow()
+
+Writes one row at a time.
+
+writer.writerow(["Nikhil", 22])
+
+reader()
+
+Reads CSV file line by line.
+
+with open("data.csv", "r") as f:
+    reader = csv.reader(f)
+    for row in reader:
+        print(row)
+
+
+Key Points:
+
+writerow() writes lists/tuples
+
+reader() returns each row as a list
+
+Used in data processing tasks
